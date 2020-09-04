@@ -1,0 +1,31 @@
+{{> header}}
+
+<div class="container h-100">
+    <div class="row h-100 justify-content-center">
+        <div class="col-md-12 table-responsive">
+            <h2>Books</h2>
+            <table id="booksTable" class="table">
+                <thead>
+                    <th>User</th>
+                    <th>Title</th>
+                    <th>ISBN</th>
+                    <th>Pages</th>
+                    <th>Processed</th>
+                </thead>
+                <tbody>
+                {{#books}}
+                    <tr>
+                        <td>{{author.username}}</td>
+                        <td>{{title}}</td>
+                        <td>{{isbn}}</td>
+                        <td>{{pages}}</td>
+                        <td>{{processed}}</td>
+                    </tr>
+                {{/books}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{{> footer}}
