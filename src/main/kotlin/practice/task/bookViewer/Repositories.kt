@@ -12,4 +12,5 @@ interface AuthorRepository: CrudRepository<Author, String>{
 
 interface PageRepository: CrudRepository<Page, String>{
     fun findByIsbnAndNumber(isbn: String, number: Int): Page?
+    fun findAllByIsbn(isbn: String): Iterable<Page>
 }

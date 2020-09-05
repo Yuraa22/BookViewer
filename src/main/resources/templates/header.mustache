@@ -30,15 +30,22 @@
     }
 
     li a:hover {
-      background-color: green;
-    }
-
-    .active {
-      background-color: red;
+      background-color: #99b7d8;
     }
 
     h2 {
       margin-top: 1rem;
+    }
+
+    .ellipsis {
+      white-space: nowrap;
+      width: 300px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .ellipsis:hover {
+      overflow: visible;
     }
     </style>
 </head>
@@ -46,5 +53,4 @@
 <ul>
   <li><a href="/">Books</a></li>
   <li><a href="/addbook">Add Book</a></li>
-  <li><a href="/readbook">Read Book</a></li>
 </ul>

@@ -1,9 +1,6 @@
 package practice.task.bookViewer
 
-import javax.persistence.Entity
-import javax.persistence.Id
-import javax.persistence.ManyToOne
-import javax.persistence.Table
+import javax.persistence.*
 
 @Entity
 @Table(name= "Author")
@@ -23,7 +20,9 @@ class Book(
 @Entity
 @Table(name= "Page")
 class Page(
-        @Id var isbn: String,
+        @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+        val page_id : Long = 0,
+        var isbn: String,
         var number: Int,
-        var url: String)
+        @Column(length = 500) var url: String)
 

@@ -11,6 +11,7 @@
                     <th>ISBN</th>
                     <th>Pages</th>
                     <th>Processed</th>
+                    <th>Read</th>
                 </thead>
                 <tbody>
                 {{#books}}
@@ -20,6 +21,7 @@
                         <td>{{isbn}}</td>
                         <td>{{pages}}</td>
                         <td>{{processed}}</td>
+                        <td><a href = "/readbook/{{isbn}}">Go to pages<a/></td>
                     </tr>
                 {{/books}}
                 </tbody>

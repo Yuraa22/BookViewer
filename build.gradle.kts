@@ -40,6 +40,8 @@ dependencies {
 
 	implementation("org.apache.pdfbox:pdfbox:2.0.20")
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9")
+
+	implementation("io.minio:minio:7.1.0")
 }
 
 tasks.withType<Test> {

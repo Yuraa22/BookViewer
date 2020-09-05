@@ -12,6 +12,6 @@ class ViewBooksController(private val repository: BookRepository) {
     fun viewBooks(model: Model): String{
         model["title"] = "Book Viewer Application"
         model["books"] = repository.findAll()
-        return "viewbooks";
+        return "viewbooks"
     }
 }

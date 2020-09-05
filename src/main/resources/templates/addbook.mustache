@@ -8,13 +8,13 @@
 				<form method="POST" enctype="multipart/form-data" id="fileUploadForm">
 					<div class="form-group">
 						<label class="control-label" for="uploadfile">Book File:</label>
-						<input type="file" class="form-control" id="uploadfile" placeholder="Upload File"  name="uploadfile"></input>
+						<input type="file" accept="application/pdf" class="form-control" id="uploadfile" placeholder="Upload File"  name="uploadfile"></input>
 					</div>
 					<div class="form-group">
 						<label class="control-label" for="isbn">ISBN:</label>
 						<input id="isbn" type="text" name="isbn"></input>
 					</div>
-					<button type="submit" class="btn btn-default" id="btnSubmit">Upload</button>
+					<button type="submit" class="btn btn-default" id="btnSubmit" style="background: #99b7d8;">Upload</button>
 				</form>
 				{{#message}}
 				    <div>{{message}}</div>
