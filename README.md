@@ -1,14 +1,19 @@
 #Read me
 This is a web application written in Kotlin with Spring Boot.
+It was made as a practice for using different technologies.
 Data persists in Postgresql database and this should be configured properly.
 
-1. -----------------------
-In application.properties file under bookViewer\src\main\resources change connection settings
+##Set connection properties
+Under bookViewer\src\main\resources
+- In application.properties change username, password and db name
+- In docker-compose.yml change same parameters
 
-spring.datasource.url
-spring.datasource.username
-spring.datasource.password
+##Build app
+gradlew build (Windows)
 
-2. -----------------------
-Username and password for using app are:
-bvUser/bvUser
+##Starting up
+docker-compose up
+
+##Using app
+username = bvUser
+password = bvUser
