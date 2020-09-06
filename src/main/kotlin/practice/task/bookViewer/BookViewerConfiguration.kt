@@ -3,6 +3,7 @@ package practice.task.bookViewer
 import org.springframework.boot.ApplicationRunner
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
+import practice.task.bookViewer.db.*
 
 @Configuration
 class BlogConfiguration {

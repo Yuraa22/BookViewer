@@ -1,4 +1,4 @@
-package practice.task.bookViewer
+package practice.task.bookViewer.utility
 
 object Utility {
     public fun checkIsbn(isbn: String): Boolean {

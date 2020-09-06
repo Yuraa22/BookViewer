@@ -1,4 +1,4 @@
-package practice.task.bookViewer
+package practice.task.bookViewer.db
 
 import javax.persistence.*
 

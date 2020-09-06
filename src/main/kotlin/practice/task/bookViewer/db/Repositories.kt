@@ -1,6 +1,9 @@
-package practice.task.bookViewer
+package practice.task.bookViewer.db
 
 import org.springframework.data.repository.CrudRepository
+import practice.task.bookViewer.db.Author
+import practice.task.bookViewer.db.Book
+import practice.task.bookViewer.db.Page
 
 interface BookRepository: CrudRepository<Book, String>{
     fun findByIsbn(isbn: String): Book?

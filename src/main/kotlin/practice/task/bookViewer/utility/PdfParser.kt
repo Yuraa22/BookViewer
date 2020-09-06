@@ -1,4 +1,4 @@
-package practice.task.bookViewer
+package practice.task.bookViewer.utility
 
 import io.minio.*
 import io.minio.http.Method
@@ -7,12 +7,13 @@ import kotlinx.coroutines.launch
 import org.apache.pdfbox.pdmodel.PDDocument
 import org.apache.pdfbox.rendering.ImageType
 import org.apache.pdfbox.rendering.PDFRenderer
+import practice.task.bookViewer.db.Page
+import practice.task.bookViewer.db.PageRepository
 import java.io.ByteArrayInputStream
 import java.io.ByteArrayOutputStream
 import java.io.InputStream
 import java.util.concurrent.TimeUnit
 import javax.imageio.ImageIO
-import kotlin.collections.ArrayList
 
 object PdfParser {
 
