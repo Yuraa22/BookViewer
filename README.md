@@ -1,7 +1,12 @@
 #Read me
 This is a web application written in Kotlin with Spring Boot.
 It was made as a practice for using different technologies.
-Data persists in Postgresql database and this should be configured properly.
+Data persists in PostgreSQL database and this should be configured properly.
+
+#Prerequisites
+- Installed Java
+- Installed Docker and started service
+- Installed PostgreSQL and started service
 
 ##Set connection properties
 Under bookViewer\src\main\resources
@@ -9,10 +14,13 @@ Under bookViewer\src\main\resources
 - In docker-compose.yml change same parameters
 
 ##Build app
-gradlew build (Windows)
+- gradlew build (Windows)
 
 ##Starting up
-docker-compose up
+- docker-compose up
+
+##Stopping up
+- docker-compose down
 
 ##Using app
 username = bvUser
