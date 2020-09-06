@@ -7,7 +7,7 @@ import practice.task.bookViewer.db.Page
 
 interface BookRepository: CrudRepository<Book, String>{
     fun findByIsbn(isbn: String): Book?
-    fun findAllByAuthor(username: String): Iterable<Book>
+    fun findAllByAuthor_Username(author_username: String): Iterable<Book>
 }
 
 interface AuthorRepository: CrudRepository<Author, String>{

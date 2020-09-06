@@ -42,6 +42,7 @@ dependencies {
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9")
 
 	implementation("io.minio:minio:7.1.0")
+	implementation("io.jsonwebtoken:jjwt:0.9.1")
 }
 
 tasks.withType<Test> {

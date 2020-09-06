@@ -3,7 +3,7 @@ package practice.task.bookViewer.utility
 import practice.task.bookViewer.db.Author
 import practice.task.bookViewer.db.AuthorRepository
 
-object Utility {
+object IsbnUtil {
     public fun checkIsbn(isbn: String): Boolean {
         var result = false
         var digitIsbn = isbn.replace("-", "")
@@ -30,18 +30,5 @@ object Utility {
             result = true
 
         return result
-    }
-
-    public fun validateJWT(token: String?, authorRepository: AuthorRepository): Author?{
-        var username = getUsernameFromJWT(token)
-        return authorRepository.findByUsername(username)
-    }
-
-    public fun generateJWT(username: String): String{
-        return ""
-    }
-
-    public fun getUsernameFromJWT(token: String?): String{
-        return ""
     }
 }

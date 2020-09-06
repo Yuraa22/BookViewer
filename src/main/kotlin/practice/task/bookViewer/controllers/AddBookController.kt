@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestHeader
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.multipart.MultipartFile
 import practice.task.bookViewer.db.*
-import practice.task.bookViewer.utility.Utility.checkIsbn
+import practice.task.bookViewer.utility.JwtTokenUtil.validateToken
+import practice.task.bookViewer.utility.IsbnUtil.checkIsbn
 import practice.task.bookViewer.utility.PdfParser
-import practice.task.bookViewer.utility.Utility
 import java.io.BufferedInputStream
 
 import java.io.InputStream
@@ -24,7 +24,7 @@ class AddBookController (private val bookRepository: BookRepository,
     @GetMapping("/addbook")
     fun addBook(model: Model,
                 @RequestHeader("authorization") token: String?): String {
-        var author: Author? = Utility.validateJWT(token, authorRepository) ?: return "redirect:/login"
+        var author: Author? = validateToken(token, authorRepository) ?: return "redirect:/login"
         model["title"] = "Book Viewer Application - Add Book"
         return "addbook"
     }
@@ -33,8 +33,8 @@ class AddBookController (private val bookRepository: BookRepository,
     fun uploadMultipartFile(@RequestParam("uploadfile") file: MultipartFile,
                             @RequestParam("isbn") isbn: String,
                             model: Model,
-                            @RequestHeader("authorization") header: String?): String {
-        var author: Author? = Utility.validateJWT(header, authorRepository) ?: return "redirect:/login"
+                            @RequestHeader("authorization") token: String?): String {
+        var author: Author? = validateToken(token, authorRepository) ?: return "redirect:/login"
         model["title"] = "Book Viewer Application - Add Book"
         if (checkIsbn(isbn)) {
             model["message"] = "File " + isbn + " uploaded successfully! -> filename = " + file.originalFilename

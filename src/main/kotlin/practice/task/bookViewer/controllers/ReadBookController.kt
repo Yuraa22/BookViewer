@@ -10,7 +10,7 @@ import practice.task.bookViewer.db.Author
 import practice.task.bookViewer.db.AuthorRepository
 import practice.task.bookViewer.db.BookRepository
 import practice.task.bookViewer.db.PageRepository
-import practice.task.bookViewer.utility.Utility
+import practice.task.bookViewer.utility.JwtTokenUtil
 
 @Controller
 class ReadBookController (private val bookRepository: BookRepository, private val authorRepository: AuthorRepository, private val pageRepository: PageRepository) {
@@ -19,7 +19,7 @@ class ReadBookController (private val bookRepository: BookRepository, private va
     fun addBook(model: Model,
                 @PathVariable("isbn") isbn: String,
                 @RequestHeader("authorization") token: String?): String {
-        var author: Author? = Utility.validateJWT(token, authorRepository) ?: return "redirect:/login"
+        var author: Author? = JwtTokenUtil.validateToken(token, authorRepository) ?: return "redirect:/login"
         model["title"] = "Book Viewer App - Read Book"
         val book = bookRepository.findByIsbn(isbn)
         if (book != null) {

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestHeader
 import practice.task.bookViewer.db.Author
 import practice.task.bookViewer.db.AuthorRepository
 import practice.task.bookViewer.db.BookRepository
-import practice.task.bookViewer.utility.Utility
+import practice.task.bookViewer.utility.JwtTokenUtil
 
 @Controller
 class ViewBooksController(private val bookRepository: BookRepository,
@@ -17,10 +17,10 @@ class ViewBooksController(private val bookRepository: BookRepository,
     @GetMapping("/")
     fun viewBooks(model: Model,
                   @RequestHeader("authorization") token: String?): String{
-        var author: Author? = Utility.validateJWT(token, authorRepository) ?: return "redirect:/login"
+        var author: Author? = JwtTokenUtil.validateToken(token, authorRepository) ?: return "redirect:/login"
         model["title"] = "Book Viewer Application"
         if (author != null) {
-            model["books"] = bookRepository.findAllByAuthor(author.username)
+            model["books"] = bookRepository.findAllByAuthor_Username(author.username)
         }
         return "viewbooks"
     }

@@ -14,6 +14,7 @@ class BlogConfiguration {
                             pageRepository: PageRepository) = ApplicationRunner {
 
         val bvUser = authorRepository.save(Author("bvUser", "bvUser"))
+        val bvUser2 = authorRepository.save(Author("bvUser2", "bvUser2"))
 
 //        bookRepository.save(Book(
 //                isbn = "978-0439064873",
